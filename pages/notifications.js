@@ -14,7 +14,8 @@ export async function getServerSideProps() {
 }
 
 export default function Notifications({ notifications }) {
-  const [notificationsASDF, setNotifications] = useState(notifications);
+  // TODO 1] rename 2] add set and use in onClick of Notification component
+  const [notificationsASDF] = useState(notifications);
   const filteredNotficiations = notificationsASDF.filter((note) => {
     return !note.dismissed;
   });
