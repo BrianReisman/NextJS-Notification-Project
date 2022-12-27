@@ -23,8 +23,8 @@ export default function Notifications({ notifications }) {
     <div>
       <h1>Notifications:</h1>
       <p>
-        Looking for resrouces to help stand out in your grant application? We've
-        got you covered, visit up here
+        Looking for resrouces to help stand out in your grant application?
+        We&apos;ve got you covered, visit up here
       </p>
       {filteredNotficiations.map((note) => {
         return <Notification key={note.id} notification={note} />;
