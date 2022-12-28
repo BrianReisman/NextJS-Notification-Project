@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prisma": "npx prisma migrate dev npx prisma db seed && npx prisma studio"
+    "prisma": "npx prisma migrate dev npx prisma db seed && npx prisma studio",
+    "reseed": "npx prisma db seed"
   },
   "dependencies": {
     "@next/font": "13.1.1",
