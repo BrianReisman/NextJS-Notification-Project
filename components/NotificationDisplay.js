@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../styles/NotificationDisplay.module.css';
+import moment from 'moment';
 
 import { FaInfo } from 'react-icons/fa';
 
@@ -30,9 +31,12 @@ export default function NotificationDisplay({
         <p className={styles.messageHeading}>Grant Deadline Upcoming</p>
         <p className={styles.message}>{`You bookmarked the, ${
           notification.grantName
-        } grant which is due on ${
-          notification.dueDate
-        }! You still have ${'---'} day(s) lef to apply and possibly be awarded as much as ${
+        } grant which is due on ${moment(notification.dueDate).format(
+          'L'
+        )}! You still have ${moment(notification.dueDate).diff(
+          moment(),
+          'days'
+        )} day(s) lef to apply and possibly be awarded as much as $${
           notification.maxGrantAmount
         }`}</p>
       </div>
