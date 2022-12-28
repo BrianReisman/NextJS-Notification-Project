@@ -1,5 +1,9 @@
 Built with NextJS and uses a SQLite db with Prisma for an ORM
 
+### instructions
+
+- [ ] npx prisma migrate dev
+
 ### 👉👉👉👉TODO:
 
 - [ ] instructions to run with Prisma locally
@@ -10,6 +14,7 @@ Built with NextJS and uses a SQLite db with Prisma for an ORM
 - [ ] fix deloy issue to Vercel
 - [ ] spell check.
 - [ ] Check for comments or placeholder
+- [ ] fix this .md
 
 ### Challenges I faced
 
