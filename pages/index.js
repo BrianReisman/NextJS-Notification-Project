@@ -3,7 +3,6 @@ import styles from '../styles/Home.module.css';
 import { MdNotificationsActive } from 'react-icons/md';
 import Link from 'next/link';
 
-// TODO logic for icon color when no notifications
 export default function Home() {
   return (
     <div className={styles.page}>
@@ -20,18 +19,14 @@ export default function Home() {
               This was built by Brian Reisman using:
             </code>
           </p>
-          <ul>
+          <ul className={styles.techList}>
             <li>NextJS</li>
             <li>SQLite database</li>
             <li>Prisma (ORM)</li>
             <li>styled-components</li>
           </ul>
           <Link href="/notifications">
-            <MdNotificationsActive
-              className={
-                true ? styles.notificationIcon : styles.notificationIconEmpty
-              }
-            />
+            <MdNotificationsActive className={styles.notificationIcon} />
           </Link>
         </div>
       </main>
