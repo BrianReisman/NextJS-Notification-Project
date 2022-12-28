@@ -1,8 +1,6 @@
 .page {
   box-sizing: border-box;
-  padding: 2rem;
   height: 100vh;
-  border: 1px solid tomato;
   background-color: #191a1d;
   font-family: sans-serif;
   color: #ffffff;
@@ -11,15 +9,7 @@
 .notificationIcon {
   height: 2rem;
   width: 2rem;
-  border: 1px solid white;
-  color: blue;
-}
-
-.notificationIconEmpty {
-  height: 2rem;
-  width: 2rem;
-  border: 1px solid blue;
-  color: white;
+  color: tomato;
 }
 
 .main {
@@ -42,6 +32,15 @@
   font-family: var(--font-mono);
 }
 
+.link {
+  border-bottom: 2px solid #5458f7;
+}
+
+.link:hover {
+  color: #ccc;
+  font-style: italic;
+}
+
 .description a {
   display: flex;
   justify-content: center;
@@ -60,7 +59,13 @@
 
 .code {
   font-weight: 700;
+  font-size: 2rem;
   font-family: var(--font-mono);
+  color: black;
+}
+
+.techList {
+  font-size: 1rem;
 }
 
 .grid {

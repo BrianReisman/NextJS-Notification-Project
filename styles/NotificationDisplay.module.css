@@ -1,3 +1,12 @@
+.page {
+  box-sizing: border-box;
+  padding: 2rem;
+  height: 100vh;
+  background-color: #191a1d;
+  font-family: sans-serif;
+  color: #ffffff;
+}
+
 .container {
   border-left: 10px solid #5458f7;
   padding: 0 2rem;
