@@ -6,18 +6,22 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prisma": "npx prisma migrate dev npx prisma db seed && npx prisma studio"
   },
   "dependencies": {
     "@next/font": "13.1.1",
     "@prisma/client": "^4.8.0",
     "eslint": "8.30.0",
     "eslint-config-next": "13.1.1",
+    "moment": "^2.29.4",
     "next": "13.1.1",
     "prisma": "^4.8.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.7.1",
-    "styled-components": "^4.1.3"
+    "react-icons": "^4.7.1"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
   }
 }
