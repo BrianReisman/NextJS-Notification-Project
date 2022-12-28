@@ -21,7 +21,7 @@ export default function Notifications({ allNotifications }) {
 
   useEffect(() => {
     setActiveNotifications(allNotifications.filter((n) => !n.dismissed));
-  }, []);
+  }, [allNotifications]);
 
   const handleDismissed = (id) => {
     setActiveNotifications(activeNotifications.filter((n) => n.id !== id));
