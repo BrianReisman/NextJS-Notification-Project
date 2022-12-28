@@ -1,33 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { PrismaClient } from '@prisma/client';
-import Notification from '../components/notification';
-import { useState } from 'react';
+import NotificationDisplay from '../components/NotificationDisplay';
+import styles from '../styles/Home.module.css';
+
 const prisma = new PrismaClient();
 
 export async function getServerSideProps() {
-  const notifications = await prisma.UpcomingGrantNotification.findMany();
+  const allNotifications = await prisma.UpcomingGrantNotification.findMany();
   return {
     props: {
-      notifications,
+      allNotifications,
     },
   };
 }
 
-export default function Notifications({ notifications }) {
-  // TODO 1] rename 2] add set and use in onClick of Notification component
-  const [notificationsASDF] = useState(notifications);
-  const filteredNotficiations = notificationsASDF.filter((note) => {
-    return !note.dismissed;
-  });
+export default function Notifications({ allNotifications }) {
+  const [activeNotifications, setActiveNotifications] = useState([]);
+
+  useEffect(() => {
+    setActiveNotifications(allNotifications.filter((n) => !n.dismissed));
+  }, []);
+
+  const handleDismissed = (id) => {
+    setActiveNotifications(activeNotifications.filter((n) => n.id !== id));
+  };
+
   return (
-    <div>
+    <div className={styles.page}>
       <h1>Notifications:</h1>
       <p>
         Looking for resrouces to help stand out in your grant application?
         We&apos;ve got you covered, visit up here
       </p>
-      {filteredNotficiations.map((note) => {
-        return <Notification key={note.id} notification={note} />;
+      {activeNotifications.map((n) => {
+        return (
+          <NotificationDisplay
+            key={n.id}
+            notification={n}
+            handleDismissed={handleDismissed}
+          />
+        );
       })}
     </div>
   );
